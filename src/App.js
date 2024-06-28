@@ -16,17 +16,15 @@ function App() {
     const [filteredCharacters, setFilteredCharacters] = useState(characters);
 
     const handleSearch = (query) => {
-        const filtered = characters.filter(
-            (character) =>
-                query != "" &&
-                character.name.toLowerCase().includes(query.toLowerCase())
+        const filtered = characters.filter((character) =>
+            character.name.toLowerCase().includes(query.toLowerCase())
         );
         setFilteredCharacters(filtered);
     };
 
     return (
         <div className="App">
-            <h1>Harry Potter Characters</h1>
+            <h1>Magical World Characters</h1>
             <CharacterInput onSearch={handleSearch} />
             <CharacterList characters={filteredCharacters} />
         </div>
